@@ -1,9 +1,10 @@
+require('dotenv/config');
 const { Keystone } = require('@keystonejs/keystone');
 const { GraphQLApp } = require('@keystonejs/app-graphql');
 const { AdminUIApp } = require('@keystonejs/app-admin-ui');
 const { MongooseAdapter: Adapter } = require('@keystonejs/adapter-mongoose');
 const PROJECT_NAME = 'keystone-cms';
-const adapterConfig = { mongoUri: 'mongodb+srv://nick-admin:TWRsXXvokOoTwVvu@keystoneblogcluster.hyp0b.mongodb.net/keystoneBlogCluster?retryWrites=true&w=majority' };
+const adapterConfig = { mongoUri: process.env.DB_URI };
 
 const PostSchema = require('./lists/posts.js');
 
