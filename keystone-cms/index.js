@@ -7,6 +7,7 @@ const PROJECT_NAME = 'keystone-cms';
 const adapterConfig = { mongoUri: process.env.DB_URI };
 
 const PostSchema = require('./lists/posts.js');
+const UserSchema = require('./lists/users.js');
 
 
 const keystone = new Keystone({
@@ -14,6 +15,7 @@ const keystone = new Keystone({
 });
 
 keystone.createList('Post', PostSchema);
+keystone.createList('User', UserSchema);
 
 module.exports = {
   keystone,
