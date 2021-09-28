@@ -23,7 +23,6 @@ const authStrategy = keystone.createAuthStrategy({
   list: 'User',
   config: {
     identifyField: 'email',
-    identifyField: 'username',
     secretField: 'password',
     protectIdentities: true
   }
@@ -31,5 +30,9 @@ const authStrategy = keystone.createAuthStrategy({
 
 module.exports = {
   keystone,
-  apps: [new GraphQLApp(), new AdminUIApp({ name: PROJECT_NAME, enableDefaultRoute: true, authStrategy: authStrategy })],
+  apps: [new GraphQLApp(), new AdminUIApp({
+    name: PROJECT_NAME,
+    enableDefaultRoute: true,
+    authStrategy: authStrategy
+  })],
 };
