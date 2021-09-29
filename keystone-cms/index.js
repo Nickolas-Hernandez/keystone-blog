@@ -9,6 +9,7 @@ const adapterConfig = { mongoUri: process.env.DB_URI };
 
 const PostSchema = require('./lists/posts.js');
 const UserSchema = require('./lists/users.js');
+const CategoriesSchema = require('./lists/categories.js');
 
 
 const keystone = new Keystone({
@@ -17,6 +18,7 @@ const keystone = new Keystone({
 
 keystone.createList('Post', PostSchema);
 keystone.createList('User', UserSchema);
+keystone.createList('Category', CategoriesSchema);
 
 const authStrategy = keystone.createAuthStrategy({
   type: PasswordAuthStrategy,
@@ -33,6 +35,6 @@ module.exports = {
   apps: [new GraphQLApp(), new AdminUIApp({
     name: PROJECT_NAME,
     enableDefaultRoute: true,
-    authStrategy: authStrategy
+    // authStrategy: authStrategy
   })],
 };
