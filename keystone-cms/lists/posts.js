@@ -1,10 +1,26 @@
-const { Text } = require('@keystonejs/fields');
+const { Text, File, DateTime, Select, Checkbox } = require('@keystonejs/fields');
+const { LocalFileAdapter } = require('@keystonejs/file-adapters');
+const { Wysiwyg } = require('@keystonejs/fields-wysiwyg-tinymce');
+
+const fileAdapter = new LocalFileAdapter({
+  src: '../../images',
+});
 
 module.exports = {
   fields: {
     title: { type: Text, isRequired: true },
-    article: {type: Text, isRequired: true},
-    // image field
-    // date field
+    image: {type: File, adapter: fileAdapter},
+    content: {
+      type: Wysiwyg,
+      editorConfig: {
+        branding: false,
+      },
+    },
+    // createdAt: {
+    //   type: DateTime,
+    //   format: 'yyyy/dd/mm HH:mm'
+    // }
+    category: { type: Select, options: ['Dev', 'Design', 'Crypto', 'Tech',]},
+    isFeatured: { type: Checkbox }
   }
 }
