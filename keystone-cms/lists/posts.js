@@ -1,4 +1,4 @@
-const { Text, File, DateTime } = require('@keystonejs/fields');
+const { Text, File, DateTime, Select, Checkbox } = require('@keystonejs/fields');
 const { LocalFileAdapter } = require('@keystonejs/file-adapters');
 const { Wysiwyg } = require('@keystonejs/fields-wysiwyg-tinymce');
 
@@ -20,5 +20,7 @@ module.exports = {
     //   type: DateTime,
     //   format: 'yyyy/dd/mm HH:mm'
     // }
+    category: { type: Select, options: ['Dev', 'Design', 'Crypto', 'Tech',]},
+    isFeatured: { type: Checkbox }
   }
 }
