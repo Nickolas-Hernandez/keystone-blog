@@ -1,3 +1,5 @@
 .env
+keystone-cms/.env
 keystone-cms/node_modules
 keystone-cms/yarn.lock
+App/node_modules
