@@ -13,3 +13,18 @@ export default function Home() {
     </>
   )
 }
+
+export async function getServerSideProps(context){
+  const res = await fetch("/categories");
+  const data = res.json();
+
+  if(!data){
+    return {
+      notFound: true
+    }
+  }
+
+  return {
+    props: [];
+  }
+}
