@@ -2,7 +2,8 @@ import Head from 'next/head'
 import Header from  '../components/header';
 
 
-export default function Home() {
+export default function Home({ categories }) {
+  console.log(categories);
   return (
     <>
     <Head>
@@ -15,16 +16,18 @@ export default function Home() {
 }
 
 export async function getServerSideProps(context){
-  const res = await fetch("/categories");
-  const data = res.json();
+  const res = await fetch("http://localhost:3001/api/categories");
+  const data = await res.json();
 
-  if(!data){
+  if(!data) { // Refactor to check returned object for error property
     return {
       notFound: true
     }
   }
 
   return {
-    props: [];
+    props: {
+      categories: data
+    }
   }
 }
