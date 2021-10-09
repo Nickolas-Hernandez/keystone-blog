@@ -22,8 +22,8 @@ export async function getServerSideProps(context){
     body: JSON.stringify({
       query: `
         query {
-          allPosts {
-            content
+          allCategories {
+            categoryName
           }
         }
       `
