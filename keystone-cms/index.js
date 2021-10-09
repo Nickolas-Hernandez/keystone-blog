@@ -32,7 +32,10 @@ const authStrategy = keystone.createAuthStrategy({
 
 module.exports = {
   keystone,
-  apps: [new GraphQLApp(), new AdminUIApp({
+  apps: [new GraphQLApp(
+    apiPath: '/api'
+  ),
+  new AdminUIApp({
     name: PROJECT_NAME,
     enableDefaultRoute: true,
     // authStrategy: authStrategy
