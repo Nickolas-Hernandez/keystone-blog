@@ -16,8 +16,21 @@ export default function Home({ categories }) {
 }
 
 export async function getServerSideProps(context){
-  const res = await fetch("http://localhost:3001/api/categories");
+  const res = await fetch("http://localhost:3000/admin/api", {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({
+      query: `
+        query {
+          allPosts {
+            content
+          }
+        }
+      `
+    })
+  });
   const data = await res.json();
+  console.log(data);
 
   if(!data) { // Refactor to check returned object for error property
     return {
