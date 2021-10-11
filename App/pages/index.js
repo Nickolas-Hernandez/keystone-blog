@@ -3,14 +3,14 @@ import Header from  '../components/header';
 
 
 export default function Home({ categories }) {
-  console.log(categories);
+  const { allCategories } = categories.data;
   return (
     <>
     <Head>
       <title>The Dev Post</title>
       <meta property="viewport" content="initial-scale=1.0, width=device-width" />
     </Head>
-    <Header />
+    <Header categories={ allCategories } />
     </>
   )
 }
@@ -30,7 +30,6 @@ export async function getServerSideProps(context){
     })
   });
   const data = await res.json();
-  console.log(data);
 
   if(!data) { // Refactor to check returned object for error property
     return {
