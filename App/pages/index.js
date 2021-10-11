@@ -30,7 +30,6 @@ export async function getServerSideProps(context){
     })
   });
   const data = await res.json();
-  console.log(data);
 
   if(!data) { // Refactor to check returned object for error property
     return {
