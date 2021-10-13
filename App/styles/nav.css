@@ -1,6 +1,8 @@
 nav{
   min-width: 100%;
   width: 100%;
+  position: relative;
+  padding-left: 20px;
 }
 
 .nav-links {
@@ -9,7 +11,7 @@ nav{
   display: flex;
   padding: 0 0 .6rem;
   margin: 0;
-  margin-left: 20px;
+  /* margin-left: 20px; */
   border-bottom: 1px solid rgba(29, 29, 29, .36);
 }
 
@@ -20,4 +22,13 @@ nav{
 
 .nav-link.active {
   color: #1d1d1d;
+}
+
+.nav-slider {
+  width: 24px;
+  height: 5px;
+  background-color: #1d1d1d;
+  position: absolute;
+  transform: translateY(-3px);
+  border-radius: 5px;
 }
