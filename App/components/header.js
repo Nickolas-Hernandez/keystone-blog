@@ -8,12 +8,14 @@ function Header({ categories }) {
     );
   });
   return(
+    <>
     <header className="section-header container">
         <h1 className="logo">The Dev Post</h1>
-        <nav>
-          <ul className="nav-links">{tabs}</ul>
-        </nav>
     </header>
+    <nav>
+      <ul className="nav-links">{tabs}</ul>
+    </nav>
+    </>
   );
 }
 
