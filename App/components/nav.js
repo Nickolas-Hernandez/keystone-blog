@@ -13,8 +13,9 @@ function Nav({ categories }) {
 
 function CategoryTab ({ categoryName }){
   const url = `/${categoryName}`;
+  const isActive = (categoryName === 'Dev') ? true : false;
   return (
-    <li className="nav-link"><a href={url}>{categoryName}</a></li>
+    <li className={isActive ? 'nav-link active' : 'nav-link'}><a href={url}>{categoryName}</a></li>
   );
 }
 
