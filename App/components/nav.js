@@ -7,6 +7,7 @@ function Nav({ categories }) {
   return (
     <nav>
       <ul className="nav-links">{tabs}</ul>
+      <span className="nav-slider"></span>
     </nav>
   );
 }
