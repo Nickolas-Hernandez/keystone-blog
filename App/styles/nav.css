@@ -28,6 +28,6 @@ nav{
   background-color: #1d1d1d;
   position: absolute;
   border-radius: 6px;
-  /* margin: 0 2.5px; */
   transform: translateY(-4px);
-}
+  transition: left .24s ease;
+  }
