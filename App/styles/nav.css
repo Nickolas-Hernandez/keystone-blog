@@ -10,12 +10,12 @@ nav{
   display: flex;
   padding: 0 0 .6rem;
   margin: 0;
-  border-bottom: 1px solid rgba(29, 29, 29, .36);
+  border-bottom: 2px solid rgba(29, 29, 29, .2);
 }
 
 .nav-link {
   margin-right: 2rem;
-  color: rgba(29, 29, 29, .36);
+  color: rgba(29, 29, 29, .3);
 }
 
 .nav-link.active {
@@ -23,10 +23,11 @@ nav{
 }
 
 .nav-slider {
-  width: 25px;
-  height: 5px;
+  width: 35px;
+  height: 6px;
   background-color: #1d1d1d;
   position: absolute;
-  transform: translateY(-3px);
-  border-radius: 5px;
+  border-radius: 6px;
+  /* margin: 0 2.5px; */
+  transform: translate(0px, -4px);
 }
