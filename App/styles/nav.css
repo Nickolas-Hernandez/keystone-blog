@@ -29,5 +29,5 @@ nav{
   position: absolute;
   border-radius: 6px;
   /* margin: 0 2.5px; */
-  transform: translate(0px, -4px);
+  transform: translateY(-4px);
 }
