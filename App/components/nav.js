@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 
 function Nav({ categories }) {
   const [ activeTab, setActiveTab] = useState('Dev');
+  const [ sliderPosition, setSliderPosition] = useState(null);
 
   const tabs = categories.map(category => {
     return(
@@ -11,20 +12,20 @@ function Nav({ categories }) {
 
 
   const slider = useRef(null);
-  // useEffect(() => {
-  //   const rect = slider.current.getBoundingClientRect();
-  //   console.log('span', rect.left);
-  //   setXPosition(rect.left);
-  // })
+  useEffect(() => {
+    const position = slider.current.getBoundingClientRect();
+    console.log('left', position.left);
+  });
 
   const animationHandler = (event) => {
     if(event.target.className !== 'nav-link') return;
-    const tabRect = event.target.getBoundingClientRect();
-    const nextPosition = tabRect.left;
-    slider.current.style.left = nextPosition + 'px';
-    console.log(event.target.textContent);
     setActiveTab(event.target.textContent);
+    const tabRect = event.target.getBoundingClientRect();
+    const offset = tabRect.width / 4;
+    const nextPosition = event.target.textContent === 'Dev' ? tabRect.left : tabRect.left + offset;
+    slider.current.style.left = nextPosition + 'px';
   };
+
 
   return (
     <nav onClick={animationHandler}>
