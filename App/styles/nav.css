@@ -29,5 +29,5 @@ nav{
   position: absolute;
   border-radius: 6px;
   transform: translateY(-4px);
-  transition: left .24s ease;
+  transition: all .24s ease;
   }

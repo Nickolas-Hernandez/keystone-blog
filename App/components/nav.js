@@ -12,8 +12,10 @@ function Nav({ categories }) {
 
 
   const slider = useRef(null);
+
   useEffect(() => {
     const position = slider.current.getBoundingClientRect();
+    slider.current.style.left = position.left + 'px';
     console.log('left', position.left);
   });
 
