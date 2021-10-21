@@ -25,6 +25,7 @@ nav{
 .nav-slider {
   width: 25px;
   height: 6px;
+  left: 20px;
   background-color: #1d1d1d;
   position: absolute;
   border-radius: 6px;
