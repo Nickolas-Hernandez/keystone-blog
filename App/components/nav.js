@@ -3,21 +3,13 @@ import React, { useState, useEffect, useRef } from 'react';
 function Nav({ categories }) {
   const [ activeTab, setActiveTab] = useState('Dev');
   const [ sliderPosition, setSliderPosition] = useState(null);
+  const slider = useRef(null);
 
   const tabs = categories.map(category => {
     return(
       <CategoryTab categoryName={category.categoryName} activeTab={activeTab}/> // add key
     );
   });
-
-
-  const slider = useRef(null);
-
-  // useEffect(() => {
-  //   const position = slider.current.getBoundingClientRect();
-  //   slider.current.style.left = position.left + 'px';
-  //   console.log('left', position.left);
-  // });
 
   const animationHandler = (event) => {
     if(event.target.className !== 'nav-link') return;
@@ -26,8 +18,8 @@ function Nav({ categories }) {
     const offset = tabRect.width / 4;
     const nextPosition = event.target.textContent === 'Dev' ? tabRect.left : tabRect.left + offset;
     slider.current.style.left = nextPosition + 'px';
+    slider.current.style.width = tabRect.width / 2 + 'px';
   };
-
 
   return (
     <nav onClick={animationHandler}>
