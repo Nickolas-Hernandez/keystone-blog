@@ -1,6 +1,6 @@
 import Head from 'next/head'
-import Header from  '../components/header';
-import Nav from  '../components/nav';
+import HeaderLogo from  '../components/headerLogo';
+import Nav from '../components/nav';
 
 
 export default function Home({ categories }) {
@@ -11,8 +11,8 @@ export default function Home({ categories }) {
       <title>The Dev Post</title>
       <meta property="viewport" content="initial-scale=1.0, width=device-width" />
     </Head>
-    <Header />
-    <Nav categories={ allCategories } />
+    <HeaderLogo />
+    <Nav categories={ allCategories} />
     </>
   )
 }

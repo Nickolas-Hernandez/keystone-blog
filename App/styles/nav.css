@@ -23,7 +23,7 @@ nav{
 }
 
 .nav-slider {
-  width: 25px;
+  min-width: 25px;
   height: 6px;
   left: 20px;
   background-color: #1d1d1d;
@@ -31,4 +31,4 @@ nav{
   border-radius: 6px;
   transform: translateY(-4px);
   transition: all .24s ease;
-  }
+}
