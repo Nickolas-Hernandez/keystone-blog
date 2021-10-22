@@ -12,10 +12,12 @@ function Nav({ categories }) {
 
 
   const slider = useRef(null);
-  useEffect(() => {
-    const position = slider.current.getBoundingClientRect();
-    console.log('left', position.left);
-  });
+
+  // useEffect(() => {
+  //   const position = slider.current.getBoundingClientRect();
+  //   slider.current.style.left = position.left + 'px';
+  //   console.log('left', position.left);
+  // });
 
   const animationHandler = (event) => {
     if(event.target.className !== 'nav-link') return;
