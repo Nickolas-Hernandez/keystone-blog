@@ -36,6 +36,6 @@ module.exports = {
   new AdminUIApp({
     name: PROJECT_NAME,
     enableDefaultRoute: true,
-    authStrategy: authStrategy
+    // authStrategy: authStrategy
   })],
 };
