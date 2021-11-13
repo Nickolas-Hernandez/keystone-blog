@@ -10,7 +10,8 @@ const adapterConfig = { mongoUri: process.env.DB_URI };
 const PostSchema = require('./lists/posts.js');
 const UserSchema = require('./lists/users.js');
 const CategoriesSchema = require('./lists/categories.js');
-
+const Auth = require('./auth');
+console.log(Auth);
 
 const keystone = new Keystone({
   adapter: new Adapter(adapterConfig),
@@ -20,15 +21,7 @@ keystone.createList('Post', PostSchema);
 keystone.createList('User', UserSchema);
 keystone.createList('Category', CategoriesSchema);
 
-const authStrategy = keystone.createAuthStrategy({
-  type: PasswordAuthStrategy,
-  list: 'User',
-  config: {
-    identifyField: 'email',
-    secretField: 'password',
-    protectIdentities: true
-  }
-});
+const authStrategy = keystone.createAuthStrategy(Auth);
 
 module.exports = {
   keystone,
