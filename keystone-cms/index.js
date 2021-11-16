@@ -17,9 +17,10 @@ const keystone = new Keystone({
   adapter: new Adapter(adapterConfig),
 });
 
-keystone.createList('Post', PostSchema);
+
 keystone.createList('User', UserSchema);
 keystone.createList('Category', CategoriesSchema);
+keystone.createList('Post', PostSchema);
 
 const authStrategy = keystone.createAuthStrategy(Auth);
 
